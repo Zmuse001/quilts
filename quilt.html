@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		    html,body{
+		        display:flex;
+		        flex-wrap: wrap;
+		        height:100%;
+		        width:100%;
+		        padding-left:2%;
+		        padding-right:2%;
+		    }
+		    div{
+		        height:10%;
+		        width:9%;
+		        border: 1px solid black;
+		    }
+		</style>
+	</head>
+	<body>
+		<script>
+		    //add 100 divs to the canvas
+            // append the di tags to the body document
+            // when the mouse hovers a div, the div should change to one of 4 random colors
+            //the event listener for hover is onmouseover, or mouseover in JS
+            // create a function paint that generates a random color, and sets the background color of the div to that color 
+            for(var i = 0; i < 100; i++){
+                var div = document.createElement("div");
+                var body = document.createElement("body");
+                document.body.appendChild(div);
+            }
+            div.addEventListener("mouseover", paint);
+            function paint(event) {
+                event.target.style.backgroundColor = "orange";
+            } 
+            const colors = ["orange", "purple", "green", "yellow"];
+            // Function to get a random color from the array
+            function getRandomColor() {
+            const randomIndex = Math.floor(Math.random() * colors.length);
+            return colors[randomIndex];
+            }
+            // Generate a random color
+            const randomColor = getRandomColor();
+            console.log('Randomly selected color:', randomColor);
+		</script>
+	</body>
+</html>
